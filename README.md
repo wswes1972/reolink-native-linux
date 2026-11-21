@@ -1,3 +1,19 @@
+# Reolink Linux Client: Will's build (0.2.1.W)
+
+This is a fork of **[TodesengelX/reolink-native-linux](https://github.com/TodesengelX/reolink-native-linux)**, the native Qt Reolink client for Linux. All credit for the application goes to its author and contributors. This branch (`will-build`) is upstream **v0.2.1** plus three changes, each offered back upstream as a pull request:
+
+| Change | What it fixes or adds | Upstream PR |
+|---|---|---|
+| NVR SD playback fallback | On NVRs whose firmware drops the HTTPS `/flv` stream (seen on an RLN16-410), SD playback never started and Play looked dead. Single-pane playback now falls back to Baichuan. | [#41](https://github.com/TodesengelX/reolink-native-linux/pull/41) |
+| Playback speed | 1x, 2x, 4x, 8x, 10x, 16x, like the official Windows client. Sound plays at 1x only. | [#42](https://github.com/TodesengelX/reolink-native-linux/pull/42) |
+| Clip export over Baichuan | Export never saved on that NVR. Clips now stream-copy to MP4 over Baichuan (no re-encode) and cross recording files. Adds 5 and 10 minute presets, **Select range** on the timeline (up to a day, HD or SD), a remembered **Save to** folder, and progress with cancel. | [#43](https://github.com/TodesengelX/reolink-native-linux/pull/43) |
+
+The title bar reads **v0.2.1.W**. The AppImage is on the [Releases](https://github.com/wswes1972/reolink-native-linux/releases) page. When upstream ships a release with these changes, use upstream's.
+
+Tested by William Woesner on an RLN16-410 NVR with 10 cameras, Ubuntu 26.04. The patches were written with Claude (Anthropic).
+
+---
+
 <p align="center">
   <img src="packaging/io.github.todesengelx.ReolinkLinux.svg" width="104" alt="">
 </p>
